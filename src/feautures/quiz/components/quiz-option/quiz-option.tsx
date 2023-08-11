@@ -1,3 +1,5 @@
+import { AiOutlineCheckCircle } from 'react-icons/ai'
+
 import { Button, ButtonColor, ButtonType } from '@/components'
 
 type QuizOptionProps = {
@@ -41,7 +43,9 @@ export const QuizOption = ({
         >
             <span style={{ textTransform: 'uppercase' }}>{letter}</span>
             <span>{name}</span>
-            <span>{icon}</span>
+            <span>
+                <AiOutlineCheckCircle />
+            </span>
         </Button>
     )
 }

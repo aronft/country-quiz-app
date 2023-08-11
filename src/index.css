@@ -18,6 +18,10 @@
 }
 
 body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-color);
     font-family: var(--font-sans);
     font-weight: 500;
 }
