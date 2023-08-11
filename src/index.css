@@ -1,14 +1,20 @@
 @import url('@/styles');
 
 :root {
-    --primary-color: hsl(37deg 95% 56% / 100%);
-    --secondary-color: hsl(237deg 54% 60% / 100%);
-    --thertiary-color: hsl(218deg 52% 24% / 100%);
-    --success-color: hsl(145deg 43% 56% / 100%);
-    --success-color-alt: hsl(145deg 50% 62% / 100%);
-    --error-color: hsl(0deg 71% 71% / 100%);
-    --white-color: hsl(0deg 0% 100% / 100%);
+    --primary-base-color: 37deg 95% 56%;
+    --secondary-base-color: 237deg 54% 60%;
+    --thertiary-base-color: 218deg 52% 24%;
+    --success-base-color: 145deg 43% 56%;
+    --success-base-color-alt: 145deg 50% 62%;
+    --error-base-color: 0deg 71% 71%;
+    --primary-color: hsl(var(--primary-base-color) / 100%);
+    --secondary-color: hsl(var(--secondary-base-color) / 100%);
+    --thertiary-color: hsl(var(--thertiary-base-color) / 100%);
+    --success-color: hsl(var(--success-base-color) / 100%);
+    --error-color: hsl(var(--error-base-color) / 100%);
+    --white-color: hsl(0deg 0% 100%);
     --font-sans: 'Poppins', sans-serif;
+
 }
 
 body {

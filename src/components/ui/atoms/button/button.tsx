@@ -1,37 +1,50 @@
 import classNames from 'classnames'
-import { MouseEventHandler, ReactNode } from 'react'
+import { ComponentProps, MouseEventHandler, ReactNode } from 'react'
+
+import { OverrideProps } from '@/utils'
 
 import styles from './button.module.css'
 
-type ButtonColors = 'primary' | 'secondary' | 'success' | 'error' | 'thertiary'
+export type ButtonColor =
+    | 'primary'
+    | 'secondary'
+    | 'success'
+    | 'error'
+    | 'thertiary'
 
-type ButtonTypes = 'outline' | 'fill'
+export type ButtonType = 'outline' | 'fill'
 
 type ButtoSizes = 'small' | 'medium' | 'large'
 
-type ButtonProps = {
+export type ButtonProps = OverrideProps<
+    ComponentProps<'button'>,
+    {
+        onClick?: MouseEventHandler
+    }
+> & {
     children: ReactNode
-    color?: ButtonColors
-    type?: ButtonTypes
+    color?: ButtonColor
+    variant?: ButtonType
     size?: ButtoSizes
-    onClick?: MouseEventHandler
 }
 
 export const Button = ({
     children,
     color = 'primary',
-    type = 'fill',
+    variant = 'fill',
     size = 'medium',
     onClick,
+    ...rest
 }: ButtonProps) => {
     return (
         <button
-            className={classNames(styles.button, {
+            className={classNames(rest.className, styles.button, {
                 [styles[`button--${color}`]]: color,
-                [styles[`button--${type}`]]: type,
+                [styles[`button--${variant}`]]: variant,
                 [styles[`button--${size}`]]: size,
             })}
             onClick={onClick}
+            {...rest}
         >
             {children}
         </button>
