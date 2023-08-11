@@ -1,0 +1,70 @@
+.button {
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-size: inherit;
+    font-weight: inherit;
+    padding-block: 15px;
+    padding-inline: 36px;
+
+    --bg-button: transparent;
+}
+
+.button--primary {
+    --bg-button: var(--primary-color);
+
+    background-color: var(--bg-button);
+    color: var(--white-color);
+}
+
+.button--secondary {
+    --bg-button: var(--secondary-color);
+
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+}
+
+.button--success {
+    --bg-button: var(--success-color);
+
+    background-color: var(--success-color);
+    color: var(--white-color);
+}
+
+.button--error {
+    --bg-button: var(--error-color);
+
+    background-color: var(--error-color);
+    color: var(--white-color);
+}
+
+.button--thertiary {
+    --bg-button: var(--thertiary-color);
+
+    background-color: var(--thertiary-color);
+    color: var(--white-color);
+}
+
+
+
+.button--outline {
+    border: 2px solid var(--bg-button);
+    background-color: transparent;
+    color: var(--bg-button);
+}
+
+.button--small {
+    padding-block: 15px;
+    padding-inline: 19px;
+}
+
+.button--medium {
+    padding-block: 15px;
+    padding-inline: 37px;
+}
+
+.button--large {
+    padding-block: 18px;
+    padding-inline: 61px;
+}
