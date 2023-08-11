@@ -21,7 +21,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--secondary-color);
+    background-image: url('@/assets/images/background.png');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family: var(--font-sans);
     font-weight: 500;
 }
