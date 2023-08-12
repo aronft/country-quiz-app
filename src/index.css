@@ -13,7 +13,20 @@
     --success-color: hsl(var(--success-base-color) / 100%);
     --error-color: hsl(var(--error-base-color) / 100%);
     --white-color: hsl(0deg 0% 100%);
+
+    /* fonts */
     --font-sans: 'Poppins', sans-serif;
+
+    /* spaces */
+    --space-xs: 8px;
+    --space-sm: 16px;
+    --space-md: 24px;
+    --space-lg: 32px;
+    --space-xl: 40px;
+    --space-2xl: 48px;
+
+    /* spacing */
+    --spacing-md: calc(25 / 16 * 1rem);
 
 }
 
