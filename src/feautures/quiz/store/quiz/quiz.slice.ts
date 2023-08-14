@@ -1,6 +1,6 @@
 import { StateCreator } from 'zustand'
 
-import { Question } from '../models'
+import { Question } from '../../models'
 /* 
        quizState: {
             questions: []
@@ -19,6 +19,8 @@ export interface QuizSlice {
     doneQuestions: Question[]
     setQuestions: (questions: Question[]) => void
     setActualQuestion: (question: Question) => void
+    updateActualQuestion: (actualQuestion: Question) => void
+    addDoneQuestion: (question: Question) => void
 }
 
 export const createQuizSlice: StateCreator<QuizSlice> = (set) => ({
@@ -28,10 +30,10 @@ export const createQuizSlice: StateCreator<QuizSlice> = (set) => ({
     setQuestions: (questions: Question[]) => set(() => ({ questions })),
     setActualQuestion: (question: Question) =>
         set(() => ({ actualQuestion: question })),
-    // next  button
-    // nextQuestion: () => {
-    // saveDoneQuestion=
-    // ----
-    // markOPtion,
-    // updateActualQuestion // change state
+    updateActualQuestion: (actualQuestion: Question) =>
+        set(() => ({ actualQuestion })),
+    addDoneQuestion: (question: Question) =>
+        set((state) => ({
+            doneQuestions: [...state.doneQuestions, question],
+        })),
 })

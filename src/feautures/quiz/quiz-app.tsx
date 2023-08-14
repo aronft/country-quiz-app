@@ -14,6 +14,7 @@ export const QuizApp = () => {
             question={actualQuestion?.question}
             type={actualQuestion?.type}
             optionSelected={actualQuestion?.optionSelected}
+            state={actualQuestion?.state}
         />
     )
 }

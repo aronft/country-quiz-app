@@ -26,9 +26,8 @@ export const generateQuestion = ({
     const option: Option = {
         ...countries[countryOptionSelectedIndex],
         isCorrect: true,
+        marked: false,
     }
-
-    options.push(option)
 
     while (options.length < 4) {
         const indexCountry = Math.floor(Math.random() * countries.length)
@@ -36,6 +35,7 @@ export const generateQuestion = ({
             options.push({
                 ...countries[indexCountry],
                 isCorrect: false,
+                marked: false,
             })
         }
     }

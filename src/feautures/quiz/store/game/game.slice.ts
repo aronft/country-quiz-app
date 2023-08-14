@@ -1,13 +1,13 @@
 import { StateCreator } from 'zustand'
 
-type GameStatus = 'IN-GAME' | 'WAITING' | 'DONE'
+export type GameStatus = 'IN-GAME' | 'WAITING' | 'DONE'
 
-interface ScoreSlice {
+export interface ScoreSlice {
     score: number
     updateScore: (score: number) => void
 }
 
-interface GameSlice {
+export interface GameSlice {
     status: GameStatus
     setStatus: (status: GameStatus) => void
 }

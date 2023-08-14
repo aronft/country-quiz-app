@@ -1,7 +1,9 @@
 import { Text } from '@/components'
-import { QuizApp } from '@/feautures'
+import { QuizApp, useGameQuizStore } from '@/feautures'
+import { Results } from '@/feautures/results'
 
 export const Home = () => {
+    const { status } = useGameQuizStore((state) => state)
     return (
         <main>
             <Text
@@ -15,8 +17,8 @@ export const Home = () => {
             >
                 Country quiz
             </Text>
-            <QuizApp />
-            {/* <Results /> */}
+            {status === 'IN-GAME' || (status === 'WAITING' && <QuizApp />)}
+            {status === 'DONE' && <Results />}
         </main>
     )
 }
