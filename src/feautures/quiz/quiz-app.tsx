@@ -6,7 +6,7 @@ export const QuizApp = () => {
     if (!actualQuestion) {
         return <div>Loading Quiz</div>
     }
-    // buscar las preguntas random
+    console.log(actualQuestion)
     return (
         <Quiz
             id={actualQuestion?.id}

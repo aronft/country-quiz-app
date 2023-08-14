@@ -1,7 +1,10 @@
 import WinnerComponent from '@/assets/winners'
 import { Button, Card, Text } from '@/components'
 
+import { useGameQuizStore } from '..'
+
 export const Results = () => {
+    const { score } = useGameQuizStore((state) => state)
     return (
         <Card>
             <div
@@ -49,7 +52,7 @@ export const Results = () => {
                         color="success-alt"
                         style={{ fontWeight: 700, paddingInline: '5px' }}
                     >
-                        4
+                        {score}
                     </Text>
                     correct anwers
                 </Text>

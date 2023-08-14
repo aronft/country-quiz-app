@@ -1,7 +1,8 @@
 import { create } from 'zustand'
 
-import { createGameSlice, GameSlice } from '.'
+import { createGameSlice, createScoreSlice, GameSlice, ScoreSlice } from '.'
 
-export const useGameQuizStore = create<GameSlice>()((...a) => ({
+export const useGameQuizStore = create<GameSlice & ScoreSlice>()((...a) => ({
     ...createGameSlice(...a),
+    ...createScoreSlice(...a),
 }))

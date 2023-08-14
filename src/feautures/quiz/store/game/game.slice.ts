@@ -5,6 +5,7 @@ export type GameStatus = 'IN-GAME' | 'WAITING' | 'DONE'
 export interface ScoreSlice {
     score: number
     updateScore: (score: number) => void
+    addPointToScore: () => void
 }
 
 export interface GameSlice {
@@ -15,6 +16,10 @@ export interface GameSlice {
 export const createScoreSlice: StateCreator<ScoreSlice> = (set) => ({
     score: 0,
     updateScore: (score: number) => set(() => ({ score })),
+    addPointToScore: () =>
+        set((state) => ({
+            score: state.score + 1,
+        })),
 })
 
 export const createGameSlice: StateCreator<GameSlice> = (set) => ({

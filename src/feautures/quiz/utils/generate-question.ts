@@ -1,5 +1,3 @@
-import { AiOutlinePartition } from 'react-icons/ai'
-
 import { Country } from '@/feautures/countries'
 import { ValidationError } from '@/utils'
 
@@ -28,6 +26,8 @@ export const generateQuestion = ({
         isCorrect: true,
         marked: false,
     }
+
+    options.push(option)
 
     while (options.length < 4) {
         const indexCountry = Math.floor(Math.random() * countries.length)

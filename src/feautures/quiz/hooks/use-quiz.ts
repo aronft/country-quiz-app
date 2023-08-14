@@ -17,7 +17,7 @@ export const useQuiz = () => {
         addDoneQuestion,
     } = useQuizStore((state) => state)
 
-    const { setStatus } = useGameQuizStore((state) => state)
+    const { setStatus, addPointToScore } = useGameQuizStore((state) => state)
 
     const getQuestions = ({ countries }: { countries: Country[] }) => {
         const questions: Question[] = []
@@ -55,7 +55,7 @@ export const useQuiz = () => {
             return
         }
         if (option.isCorrect) {
-            // add point
+            addPointToScore()
         }
         const optionsMarked = actualQuestion.options.map((row) => {
             if (row.ccn3 === option.ccn3) {
