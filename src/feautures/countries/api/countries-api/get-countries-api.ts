@@ -1,5 +1,5 @@
-import { Capital, Country } from '@/feautures/countries/models'
-import { configEnv } from '@/utils'
+import { Country } from '@/feautures/countries/models'
+import { configEnv, FetchError } from '@/utils'
 
 const env = configEnv()
 export const getCountriesAPI = async () => {
@@ -20,6 +20,6 @@ export const getCountriesAPI = async () => {
         })
         return countries
     } catch (error) {
-        throw new Error(error)
+        throw new FetchError('Error al obtener los datos')
     }
 }

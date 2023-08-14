@@ -8,4 +8,5 @@ export interface Question {
     question: string
     options: Option[]
     optionSelected: Option
+    state: 'PENDING' | 'RESPONDED'
 }

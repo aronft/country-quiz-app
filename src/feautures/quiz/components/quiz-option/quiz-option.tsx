@@ -2,6 +2,8 @@ import { AiOutlineCheckCircle } from 'react-icons/ai'
 
 import { Button, ButtonColor, ButtonType, Text } from '@/components'
 
+import { useQuizStore } from '../..'
+
 type QuizOptionProps = {
     letter: string
     name: string
@@ -18,7 +20,9 @@ export const QuizOption = ({
     marked,
 }: QuizOptionProps) => {
     // obtener el estado de la pregunta 'waiting' | 'responded'
-    const responded = true
+    const actualQuestion = useQuizStore((state) => state.actualQuestion)
+
+    const responded = actualQuestion?.state === 'RESPONDED'
     let colorVariant: ButtonColor = 'secondary'
     let buttonVariant: ButtonType = 'outline'
     if (responded) {

@@ -1,7 +1,7 @@
-import { count } from 'console'
 import { useEffect } from 'react'
 
 import { Country, useGetCountries } from '@/feautures/countries'
+import { ValidationError } from '@/utils'
 
 import { Question } from '../models'
 import { useQuizStore } from '../store'
@@ -12,16 +12,21 @@ export const useQuiz = () => {
     const { setQuestions, setActualQuestion } = useQuizStore((state) => state)
 
     const getQuestions = ({ countries }: { countries: Country[] }) => {
-        if (countries.length === 0) {
-            return
-        }
-
         const questions: Question[] = []
 
-        for (let i = 0; i < 3; i++) {
-            const question = generateQuestion({ countries, type: 'CAPITAL' })
-            if (question) {
-                questions.push(question)
+        try {
+            for (let i = 0; i < 3; i++) {
+                const question = generateQuestion({
+                    countries,
+                    type: 'CAPITAL',
+                })
+                if (question) {
+                    questions.push(question)
+                }
+            }
+        } catch (error) {
+            if (error instanceof ValidationError) {
+                // llamar a generateQuestion usando data local 40 paises
             }
         }
 
@@ -31,7 +36,6 @@ export const useQuiz = () => {
     const initGame = async () => {
         const countries = await getCountries()
         const questions = getQuestions({ countries })
-        console.log(questions)
         if (questions) {
             setQuestions(questions)
             setActualQuestion(questions[0])

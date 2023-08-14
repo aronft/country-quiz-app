@@ -1,6 +1,7 @@
 import { AiOutlinePartition } from 'react-icons/ai'
 
 import { Country } from '@/feautures/countries'
+import { ValidationError } from '@/utils'
 
 import { Option, Question, QuestionType } from '../models'
 import { getQuestionTitel } from './get-question-title'
@@ -15,7 +16,7 @@ export const generateQuestion = ({
     type,
 }: GenerateQuestion): Question | undefined => {
     if (countries.length === 0) {
-        return undefined
+        throw new ValidationError('the countries array is empty')
     }
     const options: Option[] = []
     const countryOptionSelectedIndex = Math.floor(
@@ -56,5 +57,6 @@ export const generateQuestion = ({
         type,
         options,
         optionSelected: option,
+        state: 'PENDING',
     } as Question
 }

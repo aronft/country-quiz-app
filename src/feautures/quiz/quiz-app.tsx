@@ -3,7 +3,6 @@ import { useQuizStore } from './store'
 
 export const QuizApp = () => {
     const actualQuestion = useQuizStore((state) => state.actualQuestion)
-    console.log(actualQuestion)
     if (!actualQuestion) {
         return <div>Loading Quiz</div>
     }
