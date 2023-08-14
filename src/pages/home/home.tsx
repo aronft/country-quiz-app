@@ -1,6 +1,5 @@
 import { Text } from '@/components'
-import { Quiz } from '@/feautures'
-import { Results } from '@/feautures/results'
+import { QuizApp } from '@/feautures'
 
 export const Home = () => {
     return (
@@ -16,7 +15,7 @@ export const Home = () => {
             >
                 Country quiz
             </Text>
-            <Quiz />
+            <QuizApp />
             {/* <Results /> */}
         </main>
     )

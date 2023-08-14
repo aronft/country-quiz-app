@@ -1,6 +1,6 @@
 import { Option } from '.'
 
-type QuestionType = 'FLAG' | 'CAPITAL'
+export type QuestionType = 'FLAG' | 'CAPITAL'
 
 export interface Question {
     id: string
