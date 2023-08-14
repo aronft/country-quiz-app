@@ -1,4 +1,4 @@
-import { Button, Card } from '@/components'
+import { Button, Card, Text } from '@/components'
 
 import { QuizOptionList } from '.'
 import styles from './quiz.module.css'
@@ -27,10 +27,17 @@ export const Quiz = () => {
     */
     return (
         <Card className={styles.quiz}>
-            <h2 style={{ marginBottom: '2rem' }}>Kuala</h2>
+            <Text
+                tag="h2"
+                size="md"
+                color="thertiary-alt"
+                style={{ marginBottom: 'var(--spacing-lg)' }}
+            >
+                Kuala
+            </Text>
             <QuizOptionList style={{ marginBottom: 'var(--spacing-md)' }} />
             <footer style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                <Button style={{ width: 'auto' }}>Next</Button>
+                <Button style={{ width: 'auto', fontWeight: 700 }}>Next</Button>
             </footer>
         </Card>
     )

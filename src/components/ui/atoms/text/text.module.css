@@ -1,0 +1,42 @@
+.text {
+    color: inherit;
+    font-size: inherit;
+    line-height: 1.5em;
+}
+
+.text--xs {
+    font-size: var(--text-xs);
+}
+
+.text--sm {
+    font-size: var(--text-sm);
+}
+
+.text--md {
+    font-size: var(--text-md);
+}
+
+.text--lg {
+    font-size: var(--text-lg);
+}
+
+.text--xl {
+    font-size: var(--text-xl);
+}
+
+
+.text--gray {
+    color: var(--gray-200);
+}
+
+.text--success-alt {
+    color: var(--success-color-alt);
+}
+
+.text--thertiary-alt {
+    color: var(--thertiary-color-alt);
+}
+
+.text--thertiary {
+    color: var(--thertiary-color)
+}

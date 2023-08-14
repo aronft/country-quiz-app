@@ -1,3 +1,5 @@
 export * from './button'
 export * from './icon'
+export * from './molecules/card'
 export * from './molecules'
+export * from './text'
