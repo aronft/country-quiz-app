@@ -32,7 +32,6 @@ export const Quiz = ({ id, optionSelected, options, question }: QuizProps) => {
                         <Button
                             style={{ width: 'auto', fontWeight: 700 }}
                             onClick={() => {
-                                console.log('first')
                                 nextQuestion()
                             }}
                         >

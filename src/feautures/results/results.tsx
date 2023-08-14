@@ -1,10 +1,11 @@
 import WinnerComponent from '@/assets/winners'
 import { Button, Card, Text } from '@/components'
 
-import { useGameQuizStore } from '..'
+import { useGameQuizStore, useQuiz } from '..'
 
 export const Results = () => {
     const { score } = useGameQuizStore((state) => state)
+    const { resetGame } = useQuiz()
     return (
         <Card>
             <div
@@ -63,6 +64,9 @@ export const Results = () => {
                     size="large"
                     variant="outline"
                     color="thertiary"
+                    onClick={() => {
+                        resetGame()
+                    }}
                 >
                     Try again
                 </Button>

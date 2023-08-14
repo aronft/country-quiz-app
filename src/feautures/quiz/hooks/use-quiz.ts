@@ -15,15 +15,17 @@ export const useQuiz = () => {
         questions,
         doneQuestions,
         addDoneQuestion,
+        resetQuizState,
     } = useQuizStore((state) => state)
 
-    const { setStatus, addPointToScore } = useGameQuizStore((state) => state)
+    const { setStatus, addPointToScore, resetGameState, resetScoreState } =
+        useGameQuizStore((state) => state)
 
     const getQuestions = ({ countries }: { countries: Country[] }) => {
         const questions: Question[] = []
 
         try {
-            for (let i = 0; i < 3; i++) {
+            for (let i = 0; i < 4; i++) {
                 const question = generateQuestion({
                     countries,
                     type: 'CAPITAL',
@@ -44,10 +46,18 @@ export const useQuiz = () => {
     const initGame = async () => {
         const countries = await getCountries()
         const questions = getQuestions({ countries })
+        console.log(questions)
         if (questions) {
             setQuestions(questions)
             setActualQuestion(questions[0])
         }
+    }
+
+    const resetGame = async () => {
+        resetGameState()
+        resetQuizState()
+        resetScoreState()
+        initGame()
     }
 
     const markOption = ({ option }: { option: Option }) => {
@@ -77,25 +87,34 @@ export const useQuiz = () => {
 
         addDoneQuestion(actualQuestion)
         let nextQuestion
+
+        if (questions.length - 1 === doneQuestions.length) {
+            setStatus('DONE')
+            return
+        }
+
         while (!nextQuestion) {
             const nextQuestionIndex = Math.floor(
                 Math.random() * questions.length
             )
             const ids = doneQuestions.map((row) => row.id)
+
             if (!ids.includes(questions[nextQuestionIndex].id)) {
+                if (actualQuestion.id === questions[nextQuestionIndex].id) {
+                    continue
+                }
+
                 nextQuestion = questions[nextQuestionIndex]
             }
         }
+
         setActualQuestion(nextQuestion)
-        console.log(questions, doneQuestions)
-        if (questions.length - 1 === doneQuestions.length) {
-            setStatus('DONE')
-        }
     }
 
     return {
         initGame,
         markOption,
         nextQuestion,
+        resetGame,
     }
 }

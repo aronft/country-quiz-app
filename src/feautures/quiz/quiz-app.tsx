@@ -6,7 +6,6 @@ export const QuizApp = () => {
     if (!actualQuestion) {
         return <div>Loading Quiz</div>
     }
-    console.log(actualQuestion)
     return (
         <Quiz
             id={actualQuestion?.id}
