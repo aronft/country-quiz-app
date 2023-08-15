@@ -1,3 +1,12 @@
 .quiz {
-    width: 450px;
+    position: relative;
+    width: 460px;
+}
+
+.quiz__adventure {
+    --height-adventure: 116px;
+
+    width: 162px;
+    height: var(--height-adventure);
+    margin: calc(var(--height-adventure) * -1 ) calc(var(--space-lg) * -1) var(--spacing-md) auto;
 }

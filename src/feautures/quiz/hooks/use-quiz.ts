@@ -28,7 +28,7 @@ export const useQuiz = () => {
             for (let i = 0; i < 4; i++) {
                 const question = generateQuestion({
                     countries,
-                    type: 'CAPITAL',
+                    type: i > 2 ? 'CAPITAL' : 'FLAG',
                 })
                 if (question) {
                     questions.push(question)

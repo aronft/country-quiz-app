@@ -1,3 +1,4 @@
+import AdventureComponent from '@/assets/adventure'
 import { Button, Card, Text } from '@/components'
 
 import { useQuiz, useQuizStore } from '../..'
@@ -14,6 +15,20 @@ export const Quiz = ({ id, optionSelected, options, question }: QuizProps) => {
     const { nextQuestion } = useQuiz()
     return (
         <Card className={styles.quiz}>
+            <div className={styles.quiz__adventure}>
+                <AdventureComponent />
+            </div>
+            {actualQuestion?.type === 'FLAG' && (
+                <img
+                    style={{
+                        width: '84px',
+                        height: '54px',
+                        marginBottom: 'var(--spacing-md)',
+                    }}
+                    src={actualQuestion?.optionSelected?.flag}
+                    alt={`flag from country`}
+                />
+            )}
             <Text
                 tag="h2"
                 size="md"

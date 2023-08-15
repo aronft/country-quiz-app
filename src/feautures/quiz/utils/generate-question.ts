@@ -23,6 +23,7 @@ export const generateQuestion = ({
 
     const option: Option = {
         ...countries[countryOptionSelectedIndex],
+        id: crypto.randomUUID(),
         isCorrect: true,
         marked: false,
     }
@@ -36,6 +37,7 @@ export const generateQuestion = ({
                 ...countries[indexCountry],
                 isCorrect: false,
                 marked: false,
+                id: crypto.randomUUID(),
             })
         }
     }
