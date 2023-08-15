@@ -46,7 +46,6 @@ export const useQuiz = () => {
     const initGame = async () => {
         const countries = await getCountries()
         const questions = getQuestions({ countries })
-        console.log(questions)
         if (questions) {
             setQuestions(questions)
             setActualQuestion(questions[0])

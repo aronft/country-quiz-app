@@ -1,5 +1,5 @@
-import { Country } from '@/feautures/countries'
-import { ValidationError } from '@/utils'
+import { Country } from '@/feautures/countries/models'
+import { ValidationError } from '@/utils/errors'
 
 import { Option, Question, QuestionType } from '../models'
 import { getQuestionTitel } from './get-question-title'
@@ -7,14 +7,22 @@ import { getQuestionTitel } from './get-question-title'
 interface GenerateQuestion {
     countries: Country[]
     type: QuestionType
+    numberOptions?: number
 }
 
 export const generateQuestion = ({
     countries,
     type,
-}: GenerateQuestion): Question | undefined => {
+    numberOptions = 4,
+}: GenerateQuestion) => {
     if (countries.length === 0) {
         throw new ValidationError('the countries array is empty')
+    }
+
+    if (countries.length < numberOptions) {
+        throw new ValidationError(
+            'The numberOptions be grather than countries length'
+        )
     }
     const options: Option[] = []
     const countryOptionSelectedIndex = Math.floor(
@@ -30,8 +38,23 @@ export const generateQuestion = ({
 
     options.push(option)
 
-    while (options.length < 4) {
+    let flag = 0
+    while (options.length < numberOptions) {
+        flag += 1
+        if (flag > 100) {
+            break
+        }
         const indexCountry = Math.floor(Math.random() * countries.length)
+        if (
+            countries[indexCountry].capital === undefined &&
+            type === 'CAPITAL'
+        ) {
+            continue
+        }
+
+        if (countries[indexCountry].flag === undefined && type === 'FLAG') {
+            continue
+        }
         if (indexCountry !== countryOptionSelectedIndex) {
             options.push({
                 ...countries[indexCountry],
