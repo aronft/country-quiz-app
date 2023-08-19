@@ -1,4 +1,4 @@
-const config = import.meta.env
+const config = process.env
 
 interface ImportMetaEnv {
     readonly countryApi: string
@@ -6,6 +6,6 @@ interface ImportMetaEnv {
 
 export const configEnv = (): ImportMetaEnv => {
     return {
-        countryApi: config.VITE_COUNTRY_API,
+        countryApi: config.VITE_COUNTRY_API ?? '',
     }
 }

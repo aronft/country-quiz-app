@@ -3,7 +3,7 @@ import { Button, Card, Text } from '@/components'
 
 import { useQuiz, useQuizStore } from '../..'
 import { Question } from '../../models'
-import { QuizOptionList } from '..'
+import { QuizOptionList } from '../quiz-option-list'
 import styles from './quiz.module.css'
 
 type QuizProps = Question & {}

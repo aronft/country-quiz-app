@@ -72,6 +72,9 @@ devDependencies:
   babel-jest:
     specifier: ^29.6.2
     version: 29.6.2(@babel/core@7.22.10)
+  babel-plugin-transform-import-meta:
+    specifier: ^2.2.1
+    version: 2.2.1(@babel/core@7.22.10)
   eslint:
     specifier: ^8.45.0
     version: 8.45.0
@@ -135,6 +138,9 @@ devDependencies:
   vite:
     specifier: ^4.4.5
     version: 4.4.5(@types/node@20.4.9)
+  vite-plugin-environment:
+    specifier: ^1.1.3
+    version: 1.1.3(vite@4.4.5)
 
 packages:
 
@@ -2707,6 +2713,16 @@ packages:
       '@babel/helper-define-polyfill-provider': 0.4.2(@babel/core@7.22.10)
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /babel-plugin-transform-import-meta@2.2.1(@babel/core@7.22.10):
+    resolution: {integrity: sha512-AxNh27Pcg8Kt112RGa3Vod2QS2YXKKJ6+nSvRtv7qQTJAdx0MZa4UHZ4lnxHUWA2MNbLuZQv5FVab4P1CoLOWw==}
+    peerDependencies:
+      '@babel/core': ^7.10.0
+    dependencies:
+      '@babel/core': 7.22.10
+      '@babel/template': 7.22.5
+      tslib: 2.6.1
     dev: true
 
   /babel-preset-current-node-syntax@1.0.1(@babel/core@7.22.10):
@@ -6083,7 +6099,6 @@ packages:
 
   /tslib@2.6.1:
     resolution: {integrity: sha512-t0hLfiEKfMUoqhG+U1oid7Pva4bbDPHYfJNiB7BiIjRkj1pyC++4N3huJfqY6aRH6VTB0rvtzQwjM4K6qpfOig==}
-    dev: false
 
   /type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
@@ -6243,6 +6258,14 @@ packages:
     dependencies:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
+    dev: true
+
+  /vite-plugin-environment@1.1.3(vite@4.4.5):
+    resolution: {integrity: sha512-9LBhB0lx+2lXVBEWxFZC+WO7PKEyE/ykJ7EPWCq95NEcCpblxamTbs5Dm3DLBGzwODpJMEnzQywJU8fw6XGGGA==}
+    peerDependencies:
+      vite: '>= 2.7'
+    dependencies:
+      vite: 4.4.5(@types/node@20.4.9)
     dev: true
 
   /vite@4.4.5(@types/node@20.4.9):

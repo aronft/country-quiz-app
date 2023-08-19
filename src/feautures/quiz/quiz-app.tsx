@@ -1,4 +1,4 @@
-import { Quiz } from '.'
+import { Quiz } from './components'
 import { useQuizStore } from './store'
 
 export const QuizApp = () => {

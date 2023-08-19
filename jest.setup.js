@@ -1,3 +1,9 @@
 import { Crypto } from '@peculiar/webcrypto'
 
-global.crypto = new Crypto()
+const cryptoModule = new Crypto()
+
+Object.defineProperty(window, 'crypto', {
+    get() {
+        return cryptoModule
+    },
+})
