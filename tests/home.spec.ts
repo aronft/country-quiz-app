@@ -35,4 +35,7 @@ test('workflow quiz game', async ({ page }) => {
 
     const resultsTitle = await page.getByRole('heading', { level: 2 })
     expect(await resultsTitle?.textContent()).toBe('Results')
+
+    const TryAgainButton = await page.getByRole('button', { name: 'Try again' })
+    await TryAgainButton.click()
 })
