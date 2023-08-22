@@ -7,6 +7,15 @@
     display: none;
 }
 
+.quiz__header {
+    display: flex;
+    align-items: center;
+}
+
+.quiz__header > *:nth-last-child(1) {
+    margin-left: auto;
+}
+
 @media (width >= 768px) {
     .quiz__adventure {
         display: block;

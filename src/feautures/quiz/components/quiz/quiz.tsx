@@ -15,20 +15,33 @@ export const Quiz = ({ id, optionSelected, options, question }: QuizProps) => {
     const { nextQuestion } = useQuiz()
     return (
         <Card className={styles.quiz}>
-            <div className={styles.quiz__adventure}>
-                <AdventureComponent />
-            </div>
-            {actualQuestion?.type === 'FLAG' && (
-                <img
-                    style={{
-                        width: '84px',
-                        height: '54px',
-                        marginBottom: 'var(--spacing-md)',
-                    }}
-                    src={actualQuestion?.optionSelected?.flag}
-                    alt={`flag from country`}
-                />
-            )}
+            <header
+                className={styles.quiz__header}
+                style={{
+                    marginBottom:
+                        actualQuestion?.type === 'FLAG'
+                            ? 'var(--spacing-md)'
+                            : '0px',
+                }}
+            >
+                <div className={styles.quiz__adventure}>
+                    <AdventureComponent />
+                </div>
+                {actualQuestion?.type === 'FLAG' && (
+                    <img
+                        style={{
+                            width: '84px',
+                            height: '54px',
+                        }}
+                        src={actualQuestion?.optionSelected?.flag}
+                        alt={`flag from country`}
+                    />
+                )}
+                <Text tag="p" size="md" color="thertiary-alt">
+                    <span>{doneQuestions.length + 1}</span>/
+                    <span>{questions.length}</span>
+                </Text>
+            </header>
             <Text
                 tag="h2"
                 size="md"
