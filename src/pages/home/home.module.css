@@ -1,0 +1,13 @@
+.home {
+    padding-inline: var(--space-sm);
+}
+
+.home__title {
+    text-align: center;
+}
+
+@media screen and (width >= 640px) {
+    .home__title {
+        text-align: left;
+    }
+}

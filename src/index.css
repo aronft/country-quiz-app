@@ -44,13 +44,17 @@
 }
 
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-image: url('@/assets/images/background.png');
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
     font-family: var(--font-sans);
     font-weight: 500;
+}
+
+#root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: scroll;
 }

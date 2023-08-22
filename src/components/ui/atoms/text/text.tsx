@@ -9,13 +9,21 @@ type TextProps = {
     color?: 'success-alt' | 'thertiary-alt' | 'gray' | 'thertiary'
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
     style?: CSSProperties
+    className?: string
 }
 
-export const Text = ({ children, tag, color, size, style }: TextProps) => {
+export const Text = ({
+    children,
+    tag,
+    color,
+    size,
+    style,
+    className,
+}: TextProps) => {
     const Tag = tag
     return (
         <Tag
-            className={classNames(styles.text, {
+            className={classNames(styles.text, className, {
                 [styles[`text--${color}`]]: color,
                 [styles[`text--${size}`]]: size,
             })}
