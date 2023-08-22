@@ -1,2 +1,6 @@
 export * from './atoms/button'
+export * from './atoms/icon'
 export * from './atoms'
+export * from './atoms/text'
+export * from './molecules/card'
+export * from './molecules'

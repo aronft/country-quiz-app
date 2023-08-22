@@ -1,8 +1,9 @@
 import { useEffect } from 'react'
 import { IconContext } from 'react-icons'
+import { BrowserRouter } from 'react-router-dom'
 
 import { useQuiz } from './feautures/quiz/hooks/use-quiz'
-import { Home } from './pages'
+import { AppRouter } from './router/app-router'
 
 function App() {
     const { initGame } = useQuiz()
@@ -12,9 +13,11 @@ function App() {
     }, [])
 
     return (
-        <IconContext.Provider value={{ color: 'white', size: '20' }}>
-            <Home />
-        </IconContext.Provider>
+        <BrowserRouter>
+            <IconContext.Provider value={{ color: 'white', size: '20' }}>
+                <AppRouter />
+            </IconContext.Provider>
+        </BrowserRouter>
     )
 }
 

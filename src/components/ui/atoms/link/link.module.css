@@ -1,0 +1,6 @@
+.link {
+    display: flex;
+    color: var(--secondary-color);
+    gap: var(--space-xs);
+    text-decoration: none;
+}

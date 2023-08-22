@@ -51,10 +51,3 @@ body {
     font-family: var(--font-sans);
     font-weight: 500;
 }
-
-#root {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow-y: scroll;
-}
