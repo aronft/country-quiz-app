@@ -1,7 +1,5 @@
 import { expect, test } from '@playwright/test'
 
-import { configEnv } from '../src/utils/config-env'
-
 test('should have the Country Quiz Game title page', async ({ page }) => {
     await page.goto('http://localhost:5173')
 
