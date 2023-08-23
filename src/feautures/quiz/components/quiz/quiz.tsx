@@ -1,17 +1,22 @@
 import AdventureComponent from '@/assets/adventure'
 import { Button, Card, Text } from '@/components'
 
-import { useQuiz, useQuizStore } from '../..'
+import { useQuiz } from '../..'
 import { Question } from '../../models'
 import { QuizOptionList } from '../quiz-option-list'
 import styles from './quiz.module.css'
 
-type QuizProps = Question & {}
+type QuizProps = {
+    actualQuestion: Question
+    totalQuestionResponded: number
+    totalOfQuestions: number
+}
 
-export const Quiz = ({ id, optionSelected, options, question }: QuizProps) => {
-    const { actualQuestion, questions, doneQuestions } = useQuizStore(
-        (state) => state
-    )
+export const Quiz = ({
+    actualQuestion,
+    totalQuestionResponded,
+    totalOfQuestions,
+}: QuizProps) => {
     const { nextQuestion } = useQuiz()
     return (
         <Card className={styles.quiz}>
@@ -38,8 +43,8 @@ export const Quiz = ({ id, optionSelected, options, question }: QuizProps) => {
                     />
                 )}
                 <Text tag="p" size="md" color="thertiary-alt">
-                    <span>{doneQuestions.length + 1}</span>/
-                    <span>{questions.length}</span>
+                    <span>{totalQuestionResponded}</span>/
+                    <span>{totalOfQuestions}</span>
                 </Text>
             </header>
             <Text
@@ -48,15 +53,15 @@ export const Quiz = ({ id, optionSelected, options, question }: QuizProps) => {
                 color="thertiary-alt"
                 style={{ marginBottom: 'var(--spacing-lg)' }}
             >
-                {question}
+                {actualQuestion.question}
             </Text>
             <QuizOptionList
-                options={options}
+                options={actualQuestion.options}
                 style={{ marginBottom: 'var(--spacing-md)' }}
             />
             <footer style={{ display: 'flex', justifyContent: 'flex-end' }}>
                 {actualQuestion?.state === 'RESPONDED' &&
-                    questions.length !== doneQuestions.length && (
+                    totalQuestionResponded !== totalOfQuestions && (
                         <Button
                             style={{ width: 'auto', fontWeight: 700 }}
                             onClick={() => {

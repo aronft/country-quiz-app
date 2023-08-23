@@ -2,18 +2,17 @@ import { Quiz } from './components'
 import { useQuizStore } from './store'
 
 export const QuizApp = () => {
-    const actualQuestion = useQuizStore((state) => state.actualQuestion)
+    const { actualQuestion, doneQuestions, questions } = useQuizStore(
+        (state) => state
+    )
     if (!actualQuestion) {
         return <div>Loading Quiz</div>
     }
     return (
         <Quiz
-            id={actualQuestion?.id}
-            options={actualQuestion?.options}
-            question={actualQuestion?.question}
-            type={actualQuestion?.type}
-            optionSelected={actualQuestion?.optionSelected}
-            state={actualQuestion?.state}
+            actualQuestion={actualQuestion}
+            totalOfQuestions={questions.length}
+            totalQuestionResponded={doneQuestions.length}
         />
     )
 }

@@ -4,6 +4,7 @@
 }
 
 .quiz__adventure {
+    position: absolute;
     display: none;
 }
 
@@ -18,12 +19,15 @@
 
 @media (width >= 768px) {
     .quiz__adventure {
+        top: 0;
+        right: 0;
         display: block;
+        width: 162px;
 
         --height-adventure: 116px;
-        
-        width: 162px;
+
         height: var(--height-adventure);
-        margin: calc(var(--height-adventure) * -1 ) calc(var(--space-lg) * -1) var(--spacing-md) auto;
+        margin-top: calc(var(--height-adventure) * -1) ;
+
     }
 }
