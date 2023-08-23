@@ -1,27 +1,48 @@
-# React + TypeScript + Vite
+# Country quiz
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Country Quiz is a small question and answer game that allows users to test their knowledge about flags and capitals of countries through a series of questions.
 
-Currently, two official plugins are available:
+## Motivation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The motivation behind creating "Country Quiz" was to improve my skills in frontend development.
 
-## Expanding the ESLint configuration
+Additionally, I was curious to explore the world of frontend testing. By incorporating tests, I wanted to ensure that the game functioned as expected, and also to create tests from a user's perspective.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Lastly, to complete the [challenge](https://devchallenges.io/challenges/Bu3G2irnaXmfwQ8sZkw8) from [devchallenges.io](https://devchallenges.io/).
 
-- Configure the top-level `parserOptions` property like this:
+## Features
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+-   The game includes a mode where questions are presented about identifying the flag and capital of different countries.
+-   Attractive and user-friendly interface.
+-   Instant feedback on the accuracy of answers.
+-   Use of frontend tests to ensure functionality and usability.
+
+## Technologies Used:
+
+This project was built in [React](https://react.dev) using [Vite](https://vitejs.dev) with [Typescript](https://www.typescriptlang.org), in addition to:
+
+-   Zustand
+-   Jest
+-   Testing library
+-   Playwright
+-   CSS Modules
+-   prettier
+-   eslint
+
+## Getting Started
+
+First, install all the dependencies:
+
+```shell
+pnpm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Then, run the development server:
+
+```shell
+pnpm dev
+```
+
+Open [http://localhost:5173](http://localhost:5173/) with your browser to see the result.
+
+You can start editing the page by modifying `src/pages/home/home.tsx`.
