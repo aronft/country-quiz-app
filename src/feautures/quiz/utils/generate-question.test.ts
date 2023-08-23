@@ -3,6 +3,7 @@ import { Country } from '@/feautures/countries'
 import { ValidationError } from '@/utils/errors'
 
 import { generateQuestion } from '.'
+import * as getQuestionTitel from './get-question-title'
 
 const countries: Country[] = [
     {
@@ -63,5 +64,17 @@ describe('generateQuestion ', () => {
         question.options.forEach((option) => {
             expect(option.capital).not.toBeUndefined()
         })
+    })
+    test('should call getQuestionTitle wit CAPITAL when call generateQuestion', () => {
+        const spyon = jest.spyOn(getQuestionTitel, 'getQuestionTitel')
+
+        const question = generateQuestion({
+            countries: COUNTRIES_DATA,
+            type: 'CAPITAL',
+            numberOptions: 4,
+        })
+
+        expect(spyon).toHaveBeenCalled()
+        expect(spyon).toHaveBeenCalledWith('CAPITAL')
     })
 })
