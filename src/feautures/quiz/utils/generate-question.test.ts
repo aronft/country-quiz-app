@@ -17,9 +17,9 @@ const countries: Country[] = [
     },
 ]
 
-const countriesWithoutCapital = COUNTRIES_DATA.filter(
-    (country) => country.capital === undefined
-)
+// const countriesWithoutCapital = COUNTRIES_DATA.filter(
+//     (country) => country.capital === undefined
+// )
 
 describe('generateQuestion ', () => {
     test('should return an error if the numberOption is grather than total countries', () => {

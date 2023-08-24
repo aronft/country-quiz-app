@@ -1,10 +1,9 @@
-const AdventureComponent = (props) => (
+const AdventureComponent = () => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width={162}
         height={116}
         fill="none"
-        {...props}
     >
         <g clipPath="url(#a)">
             <path
