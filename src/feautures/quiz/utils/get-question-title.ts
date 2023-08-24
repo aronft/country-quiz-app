@@ -1,6 +1,6 @@
 import { QuestionType } from '../models'
 
-export const getQuestionTitel = (type: QuestionType) => {
+export const getQuestionTitle = (type: QuestionType) => {
     if (type === 'CAPITAL') {
         return (name: string) => `${name} is the capital of`
     }

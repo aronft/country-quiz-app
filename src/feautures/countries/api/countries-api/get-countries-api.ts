@@ -20,6 +20,6 @@ export const getCountriesAPI = async () => {
         })
         return countries
     } catch (error) {
-        throw new FetchError('Error al obtener los datos')
+        throw new FetchError('Error to fetch countries data')
     }
 }

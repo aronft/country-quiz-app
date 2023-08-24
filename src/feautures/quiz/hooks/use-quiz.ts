@@ -36,7 +36,7 @@ export const useQuiz = () => {
             }
         } catch (error) {
             if (error instanceof ValidationError) {
-                // llamar a generateQuestion usando data local 40 paises
+                return []
             }
         }
 

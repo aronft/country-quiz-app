@@ -2,7 +2,7 @@ import '@testing-library/jest-dom'
 
 import { render, screen } from '@testing-library/react'
 
-import { COUNTRIES_DATA } from '@/__tests__/constants'
+import { COUNTRIES_DATA } from '@/constants'
 
 import { generateQuestion } from '../..'
 import { Quiz } from './quiz'

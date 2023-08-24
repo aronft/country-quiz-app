@@ -8,5 +8,5 @@ module.exports = {
             'identity-obj-proxy',
         '^@/(.*)$': '<rootDir>/src/$1',
     },
-    transformIgnorePatterns: [],
+    testPathIgnorePatterns: ['/tests/', '/tests-examples/'],
 }

@@ -10,7 +10,6 @@ type QuizOptionProps = {
 }
 
 export const QuizOption = ({ letter, option }: QuizOptionProps) => {
-    // obtener el estado de la pregunta 'waiting' | 'responded'
     const actualQuestion = useQuizStore((state) => state.actualQuestion)
     const { markOption } = useQuiz()
 

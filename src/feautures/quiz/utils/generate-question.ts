@@ -2,7 +2,7 @@ import { Country } from '@/feautures/countries/models'
 import { ValidationError } from '@/utils/errors'
 
 import { Option, Question, QuestionType } from '../models'
-import { getQuestionTitel } from './get-question-title'
+import { getQuestionTitle } from './get-question-title'
 
 interface GenerateQuestion {
     countries: Country[]
@@ -65,7 +65,7 @@ export const generateQuestion = ({
         }
     }
 
-    const questionGenerator = getQuestionTitel(type)
+    const questionGenerator = getQuestionTitle(type)
     if (!questionGenerator) {
         return undefined
     }

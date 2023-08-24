@@ -1,4 +1,4 @@
-import { COUNTRIES_DATA } from '@/__tests__/constants'
+import { COUNTRIES_DATA } from '@/constants'
 import { Country } from '@/feautures/countries'
 import { ValidationError } from '@/utils/errors'
 
@@ -66,9 +66,9 @@ describe('generateQuestion ', () => {
         })
     })
     test('should call getQuestionTitle wit CAPITAL when call generateQuestion', () => {
-        const spyon = jest.spyOn(getQuestionTitel, 'getQuestionTitel')
+        const spyon = jest.spyOn(getQuestionTitel, 'getQuestionTitle')
 
-        const question = generateQuestion({
+        generateQuestion({
             countries: COUNTRIES_DATA,
             type: 'CAPITAL',
             numberOptions: 4,
