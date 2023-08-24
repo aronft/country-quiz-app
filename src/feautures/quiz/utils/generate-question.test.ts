@@ -2,7 +2,7 @@ import { COUNTRIES_DATA } from '@/constants'
 import { Country } from '@/feautures/countries'
 import { ValidationError } from '@/utils/errors'
 
-import { generateQuestion } from '.'
+import { generateQuestion } from './generate-question'
 import * as getQuestionTitel from './get-question-title'
 
 const countries: Country[] = [

@@ -4,8 +4,14 @@ import { render, screen } from '@testing-library/react'
 
 import { COUNTRIES_DATA } from '@/constants'
 
-import { generateQuestion } from '../..'
+import { generateQuestion } from '../../utils/generate-question'
 import { Quiz } from './quiz'
+
+jest.mock('../../../../utils/config-env', () => {
+    return {
+        configEnv: () => ({ ...process.env }),
+    }
+})
 
 describe('Quiz ', () => {
     test('should render one question of type FLAG', () => {

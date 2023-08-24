@@ -1,4 +1,4 @@
-const config = process.env
+const config = import.meta.env
 
 interface ImportMetaEnv {
     readonly countryApi: string
