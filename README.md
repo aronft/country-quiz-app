@@ -17,6 +17,10 @@ Lastly, to complete the [challenge](https://devchallenges.io/challenges/Bu3G2irn
 -   Instant feedback on the accuracy of answers.
 -   Use of frontend tests to ensure functionality and usability.
 
+## Demo
+
+[View Demo](https://main--reliable-travesseiro-e78343.netlify.app)
+
 ## Technologies Used:
 
 This project was built in [React](https://react.dev) using [Vite](https://vitejs.dev) with [Typescript](https://www.typescriptlang.org), in addition to:
