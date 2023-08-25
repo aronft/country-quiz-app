@@ -1,4 +1,4 @@
-import { AiOutlineCheckCircle } from 'react-icons/ai'
+import { AiOutlineCheckCircle, AiOutlineCloseCircle } from 'react-icons/ai'
 
 import { Button, ButtonColor, ButtonType, Text } from '@/components'
 
@@ -12,7 +12,7 @@ type QuizOptionProps = {
 export const QuizOption = ({ letter, option }: QuizOptionProps) => {
     const actualQuestion = useQuizStore((state) => state.actualQuestion)
     const { markOption } = useQuiz()
-
+    let Icon = null
     const responded = actualQuestion?.state === 'RESPONDED'
     let colorVariant: ButtonColor = 'secondary'
     let buttonVariant: ButtonType = 'outline'
@@ -20,10 +20,12 @@ export const QuizOption = ({ letter, option }: QuizOptionProps) => {
         if (option.isCorrect) {
             buttonVariant = 'fill'
             colorVariant = 'success'
+            Icon = <AiOutlineCheckCircle />
         }
         if (option.marked && !option.isCorrect) {
             buttonVariant = 'fill'
             colorVariant = 'error'
+            Icon = <AiOutlineCloseCircle />
         }
     }
     return (
@@ -47,7 +49,7 @@ export const QuizOption = ({ letter, option }: QuizOptionProps) => {
             </Text>
             <Text tag="span">{option.name}</Text>
             <Text tag="span">
-                <AiOutlineCheckCircle />
+                {actualQuestion?.state === 'RESPONDED' && Icon}
             </Text>
         </Button>
     )
