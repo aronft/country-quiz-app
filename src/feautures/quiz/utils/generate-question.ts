@@ -24,7 +24,7 @@ export const generateQuestion = ({
             'The numberOptions be grather than countries length'
         )
     }
-    const options: Option[] = []
+    let options: Option[] = []
     const countryOptionSelectedIndex = Math.floor(
         Math.random() * countries.length
     )
@@ -75,6 +75,8 @@ export const generateQuestion = ({
                   option.capital === undefined ? '' : option.capital.name
               )
             : questionGenerator(option.name)
+
+    options = options.sort(() => Math.random() - 0.5)
 
     return {
         id: crypto.randomUUID(),
